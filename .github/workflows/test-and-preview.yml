@@ -1,0 +1,55 @@
+# Github Workflow triggered by push to dev branch
+# Does Codecov reporting
+name: Code Coverage using Codecov
+run-name: ${{ github.actor }} initiated Codecov
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+      
+jobs:
+    _test:
+      name: Test using Playwright
+      timeout-minutes: 60
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+          with:
+            ref: main 
+        
+        - name: Setup Node
+          uses: actions/setup-node@v3
+          with:
+            node-version: 17 # See if the version is correct for the repo
+                   
+        - name: Install Dependencies
+          run: |
+            npm install
+            npm install @playwright/test
+            npm install playwright
+            
+        - name: Install Playwright Browser
+          run: |
+            npx playwright install-deps
+            
+        - name: Run Playwright Tests
+          env:
+            PLAYWRIGHT_JSON_OUTPUT_NAME: ./coverage/reports/results.json
+          continue-on-error: false
+          run: npx playwright test --reporter=json
+        - uses: actions/upload-artifact@v3.1.0
+          if: always()
+          with:
+            name: results
+            path: ./coverage/reports/
+            retention-days: 30
+
+        - name: Send to Codecov
+          timeout-minutes: 60
+          uses: codecov/codecov-action@v3.1.1
+          with:
+            files: ./coverage/reports/results.json
+            flags: unittests
+            verbose: true
