@@ -12,12 +12,12 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/home/lemongrass/debug/fix-codecrow-main/coverage/reports",
+        "outputDir": "/fix-codecrow-main/coverage/reports",
         "repeatEach": 1,
         "retries": 0,
         "id": "",
         "name": "",
-        "testDir": "/home/lemongrass/debug/fix-codecrow-main",
+        "testDir": "/fix-codecrow-main",
         "testIgnore": [],
         "testMatch": [
           "**/?(*.)@(spec|test).*"
@@ -37,8 +37,8 @@
       "max": 5,
       "threshold": 15000
     },
-    "configFile": "/home/lemongrass/debug/fix-codecrow-main/playwright.config.ts",
-    "rootDir": "/home/lemongrass/debug/fix-codecrow-main",
+    "configFile": "/fix-codecrow-main/playwright.config.ts",
+    "rootDir": "/fix-codecrow-main",
     "quiet": false,
     "shard": null,
     "updateSnapshots": "missing",
