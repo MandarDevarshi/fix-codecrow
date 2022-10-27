@@ -25,7 +25,9 @@ jobs:
             node-version: 17 # See if the version is correct for the repo
                    
         - name: Install Dependencies
-          run: npm install
+          run: |
+            npm install
+            npx playwright install
             
         - name: Install Playwright Browser
           run: |
