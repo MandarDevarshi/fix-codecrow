@@ -36,20 +36,15 @@ jobs:
             
         - name: Run Playwright Tests
           env:
-            PLAYWRIGHT_JSON_OUTPUT_NAME: ./coverage/reports/results.json
+            PLAYWRIGHT_JSON_OUTPUT_NAME: ./coverage/results.json
           continue-on-error: false
           run: npx playwright test --reporter=json
         - uses: actions/upload-artifact@v3.1.0
           if: always()
           with:
             name: results
-            path: ./coverage/reports/
+            path: ./coverage/
             retention-days: 30
 
         - name: Send to Codecov
-          timeout-minutes: 60
           uses: codecov/codecov-action@v3.1.1
-          with:
-            files: ./coverage/reports/results.json
-            flags: unittests
-            verbose: true
