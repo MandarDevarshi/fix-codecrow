@@ -26,9 +26,7 @@ jobs:
                    
         - name: Install Dependencies
           run: |
-            npm install
-            npm install @playwright/test
-            npm install playwright
+            npm install # hopefully picks them all from package.json
             
         - name: Install Playwright Browser
           run: |
@@ -38,7 +36,7 @@ jobs:
           env:
             PLAYWRIGHT_JSON_OUTPUT_NAME: ./coverage/results.json
           continue-on-error: false
-          run: npx playwright test --reporter=json
+          run: npm --verbose run coverage
         - uses: actions/upload-artifact@v3.1.0
           if: always()
           with:
@@ -48,3 +46,6 @@ jobs:
 
         - name: Send to Codecov
           uses: codecov/codecov-action@v3.1.1
+	  with:
+	    files: ./coverage/coverage-final.json
+	    flags: "Everything"

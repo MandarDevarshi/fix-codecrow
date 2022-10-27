@@ -2,7 +2,7 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  outputDir: './coverage/reports/',
+  outputDir: './coverage/',
   reporter: [ ['json', { outputFile: 'results.json' }] ],
   use: {
     baseURL: 'http://localhost:5173'

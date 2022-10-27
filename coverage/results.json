@@ -12,12 +12,12 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/home/runner/work/fix-codecrow/fix-codecrow/coverage/reports",
+        "outputDir": "/home/lemongrass/debug/fix-codecrow-main/coverage",
         "repeatEach": 1,
         "retries": 0,
         "id": "",
         "name": "",
-        "testDir": "/home/runner/work/fix-codecrow/fix-codecrow",
+        "testDir": "/home/lemongrass/debug/fix-codecrow-main",
         "testIgnore": [],
         "testMatch": [
           "**/?(*.)@(spec|test).*"
@@ -28,25 +28,27 @@
     "reporter": [
       [
         "json",
-        null
+        {
+          "outputFile": "results.json"
+        }
       ]
     ],
     "reportSlowTests": {
       "max": 5,
       "threshold": 15000
     },
-    "configFile": "/home/runner/work/fix-codecrow/fix-codecrow/playwright.config.ts",
-    "rootDir": "/home/runner/work/fix-codecrow/fix-codecrow",
+    "configFile": "/home/lemongrass/debug/fix-codecrow-main/playwright.config.ts",
+    "rootDir": "/home/lemongrass/debug/fix-codecrow-main",
     "quiet": false,
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.27.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": {
       "command": "npm run dev",
       "port": 5173,
       "timeout": 120000,
-      "reuseExistingServer": false
+      "reuseExistingServer": true
     }
   },
   "suites": [
@@ -71,12 +73,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 5587,
+                  "duration": 14316,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2022-10-27T12:20:04.753Z",
+                  "startTime": "2022-10-27T17:09:51.221Z",
                   "attachments": []
                 }
               ],
@@ -103,12 +105,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 1741,
+                  "duration": 3164,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2022-10-27T12:20:10.543Z",
+                  "startTime": "2022-10-27T17:10:13.812Z",
                   "attachments": []
                 }
               ],
@@ -135,12 +137,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 1099,
+                  "duration": 3680,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2022-10-27T12:20:12.288Z",
+                  "startTime": "2022-10-27T17:10:16.979Z",
                   "attachments": []
                 }
               ],
@@ -167,12 +169,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 908,
+                  "duration": 2052,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2022-10-27T12:20:13.388Z",
+                  "startTime": "2022-10-27T17:10:20.660Z",
                   "attachments": []
                 }
               ],
