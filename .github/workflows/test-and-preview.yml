@@ -25,17 +25,14 @@ jobs:
             node-version: 17 # See if the version is correct for the repo
                    
         - name: Install Dependencies
-          run: |
-            npm install # hopefully picks them all from package.json
+          run: npm install
             
         - name: Install Playwright Browser
           run: |
             npx playwright install-deps
             
         - name: Run Playwright Tests
-          env:
-            PLAYWRIGHT_JSON_OUTPUT_NAME: ./coverage/results.json
-          continue-on-error: false
+          continue-on-error: true
           run: npm --verbose run coverage
         - uses: actions/upload-artifact@v3.1.0
           if: always()
@@ -43,9 +40,6 @@ jobs:
             name: results
             path: ./coverage/
             retention-days: 30
-
+						
         - name: Send to Codecov
           uses: codecov/codecov-action@v3.1.1
-	  with:
-	    files: ./coverage/coverage-final.json
-	    flags: "Everything"
