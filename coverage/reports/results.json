@@ -12,12 +12,12 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/fix-codecrow-main/coverage/reports",
+        "outputDir": "./coverage/reports",
         "repeatEach": 1,
         "retries": 0,
         "id": "",
         "name": "",
-        "testDir": "/fix-codecrow-main",
+        "testDir": "./tests",
         "testIgnore": [],
         "testMatch": [
           "**/?(*.)@(spec|test).*"
@@ -37,8 +37,8 @@
       "max": 5,
       "threshold": 15000
     },
-    "configFile": "/fix-codecrow-main/playwright.config.ts",
-    "rootDir": "/fix-codecrow-main",
+    "configFile": "playwright.config.ts",
+    "rootDir": "./",
     "quiet": false,
     "shard": null,
     "updateSnapshots": "missing",
@@ -53,8 +53,8 @@
   },
   "suites": [
     {
-      "title": "tests/test.ts",
-      "file": "tests/test.ts",
+      "title": "./tests/test.ts",
+      "file": "./tests/test.ts",
       "column": 0,
       "line": 0,
       "specs": [
@@ -86,7 +86,7 @@
             }
           ],
           "id": "834c525f489365c69e4e-09a859b06e952a69b2dc",
-          "file": "tests/test.ts",
+          "file": "./tests/test.ts",
           "line": 3,
           "column": 1
         },
@@ -118,7 +118,7 @@
             }
           ],
           "id": "834c525f489365c69e4e-dd4ab3a1b2b36b7a28be",
-          "file": "tests/test.ts",
+          "file": "./tests/test.ts",
           "line": 8,
           "column": 1
         },
@@ -150,7 +150,7 @@
             }
           ],
           "id": "834c525f489365c69e4e-b2611078efc29f0fe4b3",
-          "file": "tests/test.ts",
+          "file": "./tests/test.ts",
           "line": 13,
           "column": 1
         },
@@ -182,7 +182,7 @@
             }
           ],
           "id": "834c525f489365c69e4e-325aa0657cc5cd56fa19",
-          "file": "tests/test.ts",
+          "file": "./tests/test.ts",
           "line": 18,
           "column": 1
         }
