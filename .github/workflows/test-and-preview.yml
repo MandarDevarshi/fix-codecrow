@@ -33,13 +33,19 @@ jobs:
             
         - name: Run Playwright Tests
           continue-on-error: true
-          run: npm --verbose run coverage
+          run: |
+	  		npm --verbose run coverage
+
+		- name: Upload Artifact 
         - uses: actions/upload-artifact@v3.1.0
           if: always()
           with:
             name: results
             path: ./coverage/
             retention-days: 30
-						
+	    
         - name: Send to Codecov
           uses: codecov/codecov-action@v3.1.1
+		  with:
+		  	files: .coverage-final.json
+			verbose: true
